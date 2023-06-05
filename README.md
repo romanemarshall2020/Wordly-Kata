@@ -1,5 +1,12 @@
 Sodu Code:
 
+
+if green make uppercase
+
+if yello make lowercase 
+
+if not in word leave as underscore
+
 First thing first we will need to create a list of Randomly generated 5 letter words.
 
 once the game begins:
