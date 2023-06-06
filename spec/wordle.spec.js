@@ -1,4 +1,6 @@
 const Wordle = require("../wordle")
+const readline = require("readline-sync");
+
 describe('Wordle', () => {
     let wordle = new Wordle()
     it("Should display a random word from list of randomWords and test the length", () => {
@@ -13,8 +15,16 @@ describe('Wordle', () => {
     })
 
     it("should take players input and returns it ", () => {
-      let input = "forth"
-      expect(wordle.playerGuess(input)).toEqual("forth")
+      //let input = "forth"
+      spyOn(readline, 'question').and.returnValue('forth');
+      expect(wordle.playerGuess()).toEqual("forth")
+      
+    })
+
+
+    it("should return invalid input if not five letter word", () => {
+      spyOn(readline, 'question').and.returnValues('boom', 'forth');
+      expect(wordle.playerGuess()).toEqual("forth")
     })
 
   });
