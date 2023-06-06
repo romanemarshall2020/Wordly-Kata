@@ -10,9 +10,50 @@ function initialize() {
     let endGame = "2"
     
     if(userInput === startGame) {
-        wordle.displayRandomWord()
-        wordle.turnToUnderscore()
-        wordle.playerGuess()
+
+
+
+        console.log(wordle.randomlyChosenWord)
+        wordle.turnToUnderscore(wordle.randomlyChosenWord)
+        // let guess = input.question("Please guess a five letter word: ");
+
+        let isGameOver = false;
+        while(!isGameOver){
+        let guess = wordle.playerGuess()
+        
+         guess = wordle.checkInput(guess)
+        
+         isGameOver = wordle.isGameWon(guess)
+        
+         if(!isGameOver){
+         wordle.revealLetter(guess)
+         }
+        }
+        //while !gameIsOver
+
+            //playerguess
+            //checkinput on playerguess
+            //isGameWon?
+                //if this is true, set gameIsOver to true to break loop
+            //reveal letter
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     } else if(userInput === endGame){
         console.log("Game Over")
     }

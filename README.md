@@ -3,7 +3,7 @@ Sodu Code:
 
 if green make uppercase
 
-if yello make lowercase 
+if yellow make lowercase 
 
 if not in word leave as underscore
 
