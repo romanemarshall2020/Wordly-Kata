@@ -3,7 +3,7 @@ import Wordle from "./wordle.js";
 let wordle 
 
 endGameButton.addEventListener("click", function() {
-    alert("game has ended")
+    alert("Game has ended Select start game if you wish to play again")
     document.getElementById("gameStarted").style.visibility="hidden"
     document.getElementById("startGameButton").style.visibility="visible"
     initialize()
@@ -34,6 +34,9 @@ guessButton.addEventListener("click", function() {
 function initialize() {
     wordle = new Wordle
     console.log("Welcome to Wordle! In this game you will have 6 tries to guess the word")
+    console.log("The rules are simple. After you guess a word letters will fill the blanks if they exist in the answer.")
+    console.log("If the letter is in the right spot, it'll be capitalized. If it's not in the right spot, it'll remain lowercase.")
+    console.log("If the letter doesn't appear in the answer, it won't be displayed. Have fun!")
         console.log(wordle.randomlyChosenWord)
         wordle.turnToUnderscore(wordle.randomlyChosenWord)
         // playGame()

@@ -90,7 +90,7 @@ class Wordle {
   isGameWon(guess){
  
         if(guess === this.randomlyChosenWord){
-          console.log("game over you won")
+          console.log("game over! you win!")
           return true
         } else {
           return false
