@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordly</title>
     <script type="module" src="./index.js"></script>
     <script type="module" src="./wordle.js"></script>
-    <title>Wordly</title>
+    
 </head>
 <body>
     <h1>Welcome to wordle!!</h1>
     <div class="optionMenu" >
-        <button type="button" onclick="playerSelection(gameStarted, 'visible')" id="startGame">Start Game</button>
+        <button type="submit"  id="startGame">Start Game</button>
         <!-- <button type="button" onclick="initialize();" id="endGame">End Game</button> -->
 
     </div>
-    <div id="gameStarted" style="display: none;">
+    <div id="gameStarted" style="visibility: hidden;">
         <input type="text" placeholder="Type something..." id="myInput">
         <button type="button" onclick="playerGuess();">Submit Guess</button>
     </div>

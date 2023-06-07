@@ -2,18 +2,29 @@ import Wordle from "./wordle.js";
 // import { question } from "readline-sync";
 
 
+startGame.addEventListener("click", function() {
+    
+    // let startGame = getElementById("startGame").value
+   
+    // if(playerChoice = startGame) {
 
-
-function playerSelection(element, visibility) {
-
-    let startGame = getElementById("startGame").value
-    // let endGame
-    if(playerChoice === startGame) {
         console.log("game started!")
-        getElementById("gameSatrt").style.visibility = visibility
+        document.getElementById("gameStarted").style.visibility="visible"
         initialize()
-    }
-}
+    // }
+});
+
+// function playerSelection(element, visibility) {
+
+//     let startGame = getElementById("startGame").value
+   
+//     if(playerChoice === startGame) {
+
+//         console.log("game started!")
+//         getElementById("gameSatrt").style.visibility = visibility
+//         initialize()
+//     }
+// }
 
 function initialize() {
     let wordle = new Wordle

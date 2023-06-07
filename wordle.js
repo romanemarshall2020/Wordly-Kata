@@ -106,7 +106,8 @@ class Wordle {
         console.log("Nothing was entered");
         return "Nothing was entered";
       } else {
-        guess = question("Error: Please guess a valid letter.");
+       
+        
       }
     
     }
