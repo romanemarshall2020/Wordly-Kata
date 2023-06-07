@@ -1,4 +1,5 @@
 // import { question } from "readline-sync";
+import { playGame } from "./index.js";
 
 class Wordle {
   constructor() {
@@ -43,7 +44,8 @@ class Wordle {
       console.log(result)
       return result
 
-    }
+   
+  }
   turnToUnderscore(randomlyChosenWord) {
     if(typeof randomlyChosenWord === "string") {
       let wordArray = randomlyChosenWord.split("");
@@ -68,7 +70,10 @@ class Wordle {
   }
 
   
-
+  guessesRemaining() {
+    console.log(`You have ${this.maxGuess - this.incorrectGuesses} attempts left.`);
+    return this.maxGuess - this.incorrectGuesses
+  }
 
 
   playerGuess() {
@@ -103,7 +108,9 @@ class Wordle {
         isValidWord = true;
       } else if (guess === "") {
         console.log("Nothing was entered");
-        return "Nothing was entered";
+        alert( "Nothing was entered please");
+        return 0
+        
       } else {
         guess = question("Error: Please guess a valid letter.");
       }
