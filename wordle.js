@@ -15,7 +15,7 @@ class Wordle {
       "style",
       "vital"
     ];
-    this.maxGuess = 6;
+    this.maxGuess = 12;
     this.guess = ""
     this.incorrectGuesses = 0;
     this.randomlyChosenWord = this.displayRandomWord();
@@ -23,6 +23,7 @@ class Wordle {
 
     
   }
+
   revealLetter( guess ){
     let result = "";
     let guessArray = guess.split("");
@@ -54,6 +55,7 @@ class Wordle {
 
    
   }
+
   turnToUnderscore(randomlyChosenWord) {
     if(typeof randomlyChosenWord === "string") {
       let wordArray = randomlyChosenWord.split("");
@@ -71,38 +73,35 @@ class Wordle {
     let randomlyChosenWord = this.randomWords[Math.floor(Math.random() * this.randomWords.length)];
     let max = this.maxGuess
     let incorrect = this.incorrectGuesses
-      console.log(`You have ${max - incorrect} attempts left.`);
-    console.log(randomlyChosenWord);
+      console.log(`You have ${(max - incorrect)/2} attempts left.`);
+    // console.log(randomlyChosenWord);
     this.turnToUnderscore(randomlyChosenWord)
     return randomlyChosenWord;
   }
 
-  
-
-
-
   playerGuess() {
     let guess = input.question("Please guess a five letter word: ");
     guess = this.checkInput(guess)
-    
-
-
-    console.log(this.incorrectGuesses)
+    // console.log(this.maxGuess - this.incorrectGuesses)
     return guess;
    
   }
  
   isGameWon(guess){
- 
-        if(guess === this.randomlyChosenWord){
-          console.log("game over you won")
+    let attempt = this.maxGuess - this.incorrectGuesses
+    if (attempt === 0 && guess !== this.randomlyChosenWord){
+      console.log('Game over. You lose.')
+      console.log(`Answer: ${this.randomlyChosenWord.toUpperCase()}`)
+      return true
+    }    
+     else if(guess === this.randomlyChosenWord){
+          console.log("Game over! You win!")
           return true
         } else {
           return false
         }
   }
 
-  
   checkInput(guess) {
     let isValidWord = false;
     while (!isValidWord) {
@@ -112,24 +111,22 @@ class Wordle {
           this.incorrectGuesses++
         isValidWord = true;
       } else if (guess === "") {
-        console.log("Nothing was entered");
+        console.log("Nothing was entered: ");
         return "Nothing was entered";
       } else {
-        guess = input.question("Error: Please guess a valid letter.");
+        guess = input.question("Error: Please guess a valid letter: ");
       }
       // guess = this.revealLetter
     }
-    } 
-    console.log("assigning guess")
-    console.log("This is guess111: " + guess);
-    console.log("This is random word: " + this.randomlyChosenWord);
+    }
+    console.log("Assigning guess...")
+    // console.log(`This is guess: ${guess}`);
+    // console.log("This is random word: " + this.randomlyChosenWord);
     //guess = this.revealLetter(this.randomlyChosenWord, guess)
-    console.log("assigned guess")
-    console.log(`guess: ${guess}`)
+    // console.log("Assigned guess")
+    console.log(`Guess: ${guess}`)
     return guess
   }
-
-
 }
 
 module.exports = Wordle;

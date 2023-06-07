@@ -5,7 +5,7 @@ initialize()
 function initialize() {
     let wordle = new Wordle
     console.log("Welcome to Wordle! In this game you will have 6 tries to guess the word")
-    let userInput = input.question("Please choose an option")
+    let userInput = input.question("Please choose an option (1 or 2): ")
     let startGame = "1";
     let endGame = "2"
     
@@ -13,7 +13,7 @@ function initialize() {
 
 
 
-        console.log(wordle.randomlyChosenWord)
+        // console.log(wordle.randomlyChosenWord)
         wordle.turnToUnderscore(wordle.randomlyChosenWord)
         // let guess = input.question("Please guess a five letter word: ");
 
