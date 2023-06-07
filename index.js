@@ -1,8 +1,8 @@
 import Wordle from "./wordle.js";
 // import { question } from "readline-sync";
+let wordle = new Wordle
 
-
-startGame.addEventListener("click", function() {
+startGameButton.addEventListener("click", function() {
     
     // let startGame = getElementById("startGame").value
    
@@ -10,40 +10,33 @@ startGame.addEventListener("click", function() {
 
         console.log("game started!")
         document.getElementById("gameStarted").style.visibility="visible"
-        initialize()
+        document.getElementById("startGameButton").style.visibility="hidden"
+        //initialize()
     // }
 });
 
-// function playerSelection(element, visibility) {
+guessButton.addEventListener("click", function() {
+    
 
-//     let startGame = getElementById("startGame").value
-   
-//     if(playerChoice === startGame) {
+        console.log("got the guess")
+        initialize();
+});
 
-//         console.log("game started!")
-//         getElementById("gameSatrt").style.visibility = visibility
-//         initialize()
-//     }
-// }
 
 function initialize() {
-    let wordle = new Wordle
-    console.log("Welcome to Wordle! In this game you will have 6 tries to guess the word")
-    // let userInput = question("Please choose an option")
-   
     
-   
-
-        // document.getElementById("gameStarted").style.visibility="visible";
-
+    console.log("Welcome to Wordle! In this game you will have 6 tries to guess the word")
         console.log(wordle.randomlyChosenWord)
         wordle.turnToUnderscore(wordle.randomlyChosenWord)
- 
+        playGame()
+}
 
-        let isGameOver = false;
-        while(!isGameOver){
-        let guess = wordle.playerGuess()
-        
+
+function playGame() {
+    let isGameOver = false;
+        //while(!isGameOver){
+        let guess = document.getElementById("myInput").value
+        document.getElementById("myInput").value = null
          guess = wordle.checkInput(guess)
         
          isGameOver = wordle.isGameWon(guess)
@@ -51,31 +44,6 @@ function initialize() {
          if(!isGameOver){
          wordle.revealLetter(guess)
          }
-         
-        
- 
-       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    }
-
-    // } else if(userInput === endGame){
-    //     console.log("Game Over")
-    // }
-
-
 }
 
 

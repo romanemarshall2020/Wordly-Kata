@@ -43,8 +43,7 @@ class Wordle {
       console.log(result)
       return result
 
-   
-  }
+    }
   turnToUnderscore(randomlyChosenWord) {
     if(typeof randomlyChosenWord === "string") {
       let wordArray = randomlyChosenWord.split("");
@@ -106,8 +105,7 @@ class Wordle {
         console.log("Nothing was entered");
         return "Nothing was entered";
       } else {
-       
-        
+        guess = question("Error: Please guess a valid letter.");
       }
     
     }
