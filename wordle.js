@@ -20,16 +20,12 @@ class Wordle {
     this.incorrectGuesses = 0;
     this.randomlyChosenWord = this.displayRandomWord();
     this.hiddenWord = [ '_', '_', '_', '_', '_' ];
-
-    
   }
 
   revealLetter( guess ){
     let result = "";
     let guessArray = guess.split("");
    
- 
-    // guessArray.map((letter) => {
       for(let i = 0; i < guess.length; i++){
         if(guess.charAt(i) === this.randomlyChosenWord.charAt(i)){
           result += guess.charAt(i).toUpperCase()
@@ -43,17 +39,6 @@ class Wordle {
       }
       console.log(result)
       return result
-    //   if(this.randomlyChosenWord.includes(letter)) {
-    //     result += letter;
-        
-    //   } else {
-    //     result += "_";
-    //   }
-    // })
-    // console.log(result.split(""))
-    // this.hiddenWord = result.split("")
-
-   
   }
 
   turnToUnderscore(randomlyChosenWord) {
@@ -65,8 +50,7 @@ class Wordle {
       }
       console.log(wordArray)
     return wordArray;
-    }
-    
+    } 
   }
 
   displayRandomWord() {
@@ -82,9 +66,7 @@ class Wordle {
   playerGuess() {
     let guess = input.question("Please guess a five letter word: ");
     guess = this.checkInput(guess)
-    // console.log(this.maxGuess - this.incorrectGuesses)
-    return guess;
-   
+    return guess;  
   }
  
   isGameWon(guess){
@@ -116,14 +98,9 @@ class Wordle {
       } else {
         guess = input.question("Error: Please guess a valid letter: ");
       }
-      // guess = this.revealLetter
     }
     }
     console.log("Assigning guess...")
-    // console.log(`This is guess: ${guess}`);
-    // console.log("This is random word: " + this.randomlyChosenWord);
-    //guess = this.revealLetter(this.randomlyChosenWord, guess)
-    // console.log("Assigned guess")
     console.log(`Guess: ${guess}`)
     return guess
   }

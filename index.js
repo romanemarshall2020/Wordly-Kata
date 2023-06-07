@@ -5,6 +5,9 @@ initialize()
 function initialize() {
     let wordle = new Wordle
     console.log("Welcome to Wordle! In this game you will have 6 tries to guess the word")
+    console.log("The rules are simple. After you guess a word letters will fill the blanks if they exist in the answer.")
+    console.log("If the letter is in the right spot, it'll be capitalized. If it's not in the right spot, it'll remain lowercase.")
+    console.log("If the letter doesn't appear in the answer, it won't be displayed. Have fun!")
     let userInput = input.question("Please choose an option (1 or 2): ")
     let startGame = "1";
     let endGame = "2"
