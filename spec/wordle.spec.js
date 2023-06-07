@@ -1,5 +1,5 @@
-const Wordle = require("../wordle")
-const readline = require("readline-sync");
+import Wordle from "../wordle";
+import readline from "readline-sync";
 
 describe('Wordle', () => {
     let wordle = new Wordle()

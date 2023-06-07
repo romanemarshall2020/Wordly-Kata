@@ -2,6 +2,7 @@
   "name": "wordly-kata",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "jasmine",
@@ -14,6 +15,7 @@
     "jasmine": "^5.0.0"
   },
   "dependencies": {
-    "readline-sync": "^1.4.10"
+    "readline-sync": "^1.4.10",
+    "requirejs": "^2.3.6"
   }
 }

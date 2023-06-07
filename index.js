@@ -1,21 +1,33 @@
-const Wordle = require("./wordle");
-const input = require("readline-sync")
+import Wordle from "./wordle.js";
+// import { question } from "readline-sync";
 
-initialize()
+
+
+
+function playerSelection(element, visibility) {
+
+    let startGame = getElementById("startGame").value
+    // let endGame
+    if(playerChoice === startGame) {
+        console.log("game started!")
+        getElementById("gameSatrt").style.visibility = visibility
+        initialize()
+    }
+}
+
 function initialize() {
     let wordle = new Wordle
     console.log("Welcome to Wordle! In this game you will have 6 tries to guess the word")
-    let userInput = input.question("Please choose an option")
-    let startGame = "1";
-    let endGame = "2"
+    // let userInput = question("Please choose an option")
+   
     
-    if(userInput === startGame) {
+   
 
-
+        // document.getElementById("gameStarted").style.visibility="visible";
 
         console.log(wordle.randomlyChosenWord)
         wordle.turnToUnderscore(wordle.randomlyChosenWord)
-        // let guess = input.question("Please guess a five letter word: ");
+ 
 
         let isGameOver = false;
         while(!isGameOver){
@@ -28,15 +40,9 @@ function initialize() {
          if(!isGameOver){
          wordle.revealLetter(guess)
          }
-        }
-        //while !gameIsOver
-
-            //playerguess
-            //checkinput on playerguess
-            //isGameWon?
-                //if this is true, set gameIsOver to true to break loop
-            //reveal letter
-
+         
+        
+ 
        
 
 
@@ -52,11 +58,11 @@ function initialize() {
 
 
 
-
-
-    } else if(userInput === endGame){
-        console.log("Game Over")
     }
+
+    // } else if(userInput === endGame){
+    //     console.log("Game Over")
+    // }
 
 
 }

@@ -1,4 +1,4 @@
-const input = require("readline-sync");
+// import { question } from "readline-sync";
 
 class Wordle {
   constructor() {
@@ -25,10 +25,10 @@ class Wordle {
   }
   revealLetter( guess ){
     let result = "";
-    let guessArray = guess.split("");
+    // let guessArray = guess.split("");
    
  
-    // guessArray.map((letter) => {
+  
       for(let i = 0; i < guess.length; i++){
         if(guess.charAt(i) === this.randomlyChosenWord.charAt(i)){
           result += guess.charAt(i).toUpperCase()
@@ -42,15 +42,6 @@ class Wordle {
       }
       console.log(result)
       return result
-    //   if(this.randomlyChosenWord.includes(letter)) {
-    //     result += letter;
-        
-    //   } else {
-    //     result += "_";
-    //   }
-    // })
-    // console.log(result.split(""))
-    // this.hiddenWord = result.split("")
 
    
   }
@@ -82,7 +73,7 @@ class Wordle {
 
 
   playerGuess() {
-    let guess = input.question("Please guess a five letter word: ");
+    let guess = document.getElementById("myInput").value;
     guess = this.checkInput(guess)
     
 
@@ -115,15 +106,15 @@ class Wordle {
         console.log("Nothing was entered");
         return "Nothing was entered";
       } else {
-        guess = input.question("Error: Please guess a valid letter.");
+        guess = question("Error: Please guess a valid letter.");
       }
-      // guess = this.revealLetter
+    
     }
     } 
     console.log("assigning guess")
     console.log("This is guess111: " + guess);
     console.log("This is random word: " + this.randomlyChosenWord);
-    //guess = this.revealLetter(this.randomlyChosenWord, guess)
+
     console.log("assigned guess")
     console.log(`guess: ${guess}`)
     return guess
@@ -132,4 +123,4 @@ class Wordle {
 
 }
 
-module.exports = Wordle;
+export default Wordle;
