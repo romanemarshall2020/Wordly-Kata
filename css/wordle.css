@@ -66,6 +66,7 @@ html,body{
     border: 2px solid var (--empty);
     margin: 4px;
     background: var(--empty);
+    color: white;
     text-transform: uppercase;
     display: grid;
     place-items: center;

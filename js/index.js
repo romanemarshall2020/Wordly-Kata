@@ -1,6 +1,6 @@
 import Wordle from "./wordle.js";
 let wordle;
-
+let currentBoxNum = 0
 endGameButton.addEventListener("click", function () {
   alert("game has ended");
   document.getElementById("gameStarted").style.visibility = "hidden";
@@ -33,11 +33,22 @@ function playGame() {
   console.log("inside playe game ");
   let isGameOver = false;
   let guess = document.getElementById("myInput").value;
+  // let boxes = document.getElementById("box1")
+  let row = document.getElementsByClassName("rows")
   
   for(let i = 0; i < guess.length; i++) {
-    for(let j = 0; j < 5; j++){
-    document.getElementById("box1").append(guess[i])
-    }
+
+    // for(let j = 0; j < 5; j++){
+
+    let boxNum = 'box' + currentBoxNum
+    currentBoxNum++
+
+    // console.log(s)
+
+    document.getElementById(boxNum).append(guess[i])
+
+    // }
+
   }
   document.getElementById("myInput").value = null;
   guess = wordle.checkInput(guess);

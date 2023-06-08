@@ -95,7 +95,8 @@ class Wordle {
           alert("Nothing was entered please");
           return 0;
         } else {
-          guess = question("Error: Please guess a valid letter.");
+          alert("Error: Please guess a valid letter.");
+          return 0
         }
       }
     }
