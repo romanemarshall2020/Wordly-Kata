@@ -1,0 +1,56 @@
+.banner {
+    display: flex;
+    justify-content: center;
+    background-color: chartreuse;
+    border-radius: 10px;
+    font-family: 'Tilt Prism', cursive;
+}
+.input{
+    display: flex;
+    justify-content: center;
+}
+
+.optionMenu{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-content: space-evenly;
+}
+.wordContainer {
+    justify-items: auto;
+}
+
+#gameStarted{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px;
+    overflow: hidden;
+    gap: 40px;
+
+}
+.rows {
+  display: flex;
+  /* flex-wrap: nowrap; */
+  /* flex-direction: column; */
+  overflow: hidden;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+  /* background-color: blue; */
+  height: 30px;
+  width: auto;
+}
+
+.rows .boxes {
+    display: inline-flex;
+    -ms-flex-item-align: auto;
+    justify-content: space-around;
+    border: solid black;
+    height: 60px;
+    width: 80px;
+    background-color: lightgray;
+
+}

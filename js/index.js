@@ -1,5 +1,4 @@
 import Wordle from "./wordle.js";
-// import { question } from "readline-sync";
 let wordle 
 
 endGameButton.addEventListener("click", function() {
@@ -11,21 +10,13 @@ endGameButton.addEventListener("click", function() {
 
 
 startGameButton.addEventListener("click", function() {
-    
-    // let startGame = getElementById("startGame").value
-   
-    // if(playerChoice = startGame) {
-
         console.log("game started!")
         document.getElementById("gameStarted").style.visibility="visible"
         document.getElementById("startGameButton").style.visibility="hidden"
         initialize()
-    // }
 });
 
 guessButton.addEventListener("click", function() {
-    
-
         console.log("got the guess")
         playGame();
 });
@@ -34,16 +25,14 @@ guessButton.addEventListener("click", function() {
 function initialize() {
     wordle = new Wordle
     console.log("Welcome to Wordle! In this game you will have 6 tries to guess the word")
-        console.log(wordle.randomlyChosenWord)
+        // console.log(wordle.randomlyChosenWord)
         wordle.turnToUnderscore(wordle.randomlyChosenWord)
-        // playGame()
 }
 
 
 function playGame() {
     console.log("inside playe game ")
     let isGameOver = false;
-        //while(!isGameOver){
         let guess = document.getElementById("myInput").value
         document.getElementById("myInput").value = null
          guess = wordle.checkInput(guess)
