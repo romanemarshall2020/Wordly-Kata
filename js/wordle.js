@@ -55,7 +55,6 @@ class Wordle {
     let max = this.maxGuess;
     let incorrect = this.incorrectGuesses;
     console.log(`You have ${max - incorrect} attempts left.`);
-    console.log(randomlyChosenWord);
     this.turnToUnderscore(randomlyChosenWord);
     return randomlyChosenWord;
   }
@@ -100,12 +99,12 @@ class Wordle {
         }
       }
     }
-    console.log("assigning guess");
-    console.log("This is guess111: " + guess);
-    console.log("This is random word: " + this.randomlyChosenWord);
+    // console.log("assigning guess");
+    // console.log("This is guess111: " + guess);
+    // console.log("This is random word: " + this.randomlyChosenWord);
 
-    console.log("assigned guess");
-    console.log(`guess: ${guess}`);
+    // console.log("assigned guess");
+    // console.log(`guess: ${guess}`);
     return guess;
   }
 }

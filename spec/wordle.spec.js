@@ -1,4 +1,4 @@
-import Wordle from "../js/wordle";
+import Wordle from "../js/wordle.js";
 import readline from "readline-sync";
 
 describe('Wordle', () => {

@@ -22,9 +22,10 @@ guessButton.addEventListener("click", function () {
 
 function initialize() {
   wordle = new Wordle();
-  console.log(
-    "Welcome to Wordle! In this game you will have 6 tries to guess the word"
-  );
+  console.log("Welcome to Wordle! In this game you will have 6 tries to guess the word");
+  console.log("The rules are simple. After you guess a word letters will fill the blanks if they exist in the answer.")
+  console.log("If the letter is in the right spot, it'll be capitalized. If it's not in the right spot, it'll remain lowercase.")
+  console.log("If the letter doesn't appear in the answer, it won't be displayed. Have fun!")  
   wordle.turnToUnderscore(wordle.randomlyChosenWord);
   
 }
@@ -33,22 +34,12 @@ function playGame() {
   console.log("inside playe game ");
   let isGameOver = false;
   let guess = document.getElementById("myInput").value;
-  // let boxes = document.getElementById("box1")
   let row = document.getElementsByClassName("rows")
   
   for(let i = 0; i < guess.length; i++) {
-
-    // for(let j = 0; j < 5; j++){
-
     let boxNum = 'box' + currentBoxNum
     currentBoxNum++
-
-    // console.log(s)
-
     document.getElementById(boxNum).append(guess[i])
-
-    // }
-
   }
   document.getElementById("myInput").value = null;
   guess = wordle.checkInput(guess);
